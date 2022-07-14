@@ -1,10 +1,9 @@
-import {MainScreen} from '../../pages/main/main';
+import { MainScreen } from '../../pages/main/main';
 
 type AppProps = {
   cardsCount: number
-}
-function App({cardsCount}:AppProps): JSX.Element {
-  return <MainScreen cardsCount={cardsCount} />;
-}
+};
 
-export default App;
+export const App =({cardsCount}:AppProps): JSX.Element => {
+  return <MainScreen cardsCount={cardsCount} />;
+};
