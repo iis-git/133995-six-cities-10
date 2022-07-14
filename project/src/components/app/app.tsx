@@ -1,5 +1,9 @@
-function App(): JSX.Element {
-  return <p>Hello, world!</p>;
-}
+import { MainScreen } from '../../pages/main/main';
 
-export default App;
+type AppProps = {
+  cardsCount: number
+};
+
+export const App =({cardsCount}:AppProps): JSX.Element => {
+  return <MainScreen cardsCount={cardsCount} />;
+};
