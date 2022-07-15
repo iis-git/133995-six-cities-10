@@ -5,7 +5,6 @@ type MainScreenProps = {
 }
 
 export const MainScreen = ({cardsCount}: MainScreenProps): JSX.Element => (
-
   <div className="page page--gray page--main">
     <header className="header">
       <div className="container">
@@ -109,5 +108,4 @@ export const MainScreen = ({cardsCount}: MainScreenProps): JSX.Element => (
       </div>
     </main>
   </div>
-
 );

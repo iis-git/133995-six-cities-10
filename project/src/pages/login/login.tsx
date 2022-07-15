@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 export const Login = (): JSX.Element => (
   <div className="page page--gray page--login">
     <header className="header">
