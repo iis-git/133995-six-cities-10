@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 export const Property = (): JSX.Element => (
   <div className="page">
     <header className="header">

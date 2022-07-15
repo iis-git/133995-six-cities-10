@@ -1,8 +1,6 @@
 import React from 'react';
 
-
 export const MainEmpty = (): JSX.Element => (
-
   <div className="page page--gray page--main">
     <header className="header">
       <div className="container">

@@ -1,8 +1,6 @@
 import React from 'react';
 
-
 export const Favorites = (): JSX.Element => (
-
   <div className="page">
     <header className="header">
       <div className="container">
