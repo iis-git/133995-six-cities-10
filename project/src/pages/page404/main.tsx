@@ -19,7 +19,7 @@ export const Page404 = (): JSX.Element => (
     </header>
     <main className="page__main page__main--index">
       <section className="container">
-        <h1>404 Page not found :((</h1>{" "}
+        <h1>404 Page not found :((</h1>
         <a className="header__nav-links" href="/">
           Вернуться на главную
         </a>
