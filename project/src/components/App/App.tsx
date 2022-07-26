@@ -6,6 +6,7 @@ import { Favorites } from '../../pages/favorites';
 import { Page404 } from '../../pages/page-404';
 import { PrivateRoute } from '../PrivateRoute/PrivateRoute';
 import { FC } from 'react';
+import {Offer} from '../../pages/offer';
 
 export type CardProps = {
   title: string,
@@ -38,10 +39,10 @@ export const App:FC<AppProps> = ({ cardsCount, offers }) => (
           </PrivateRoute>
         }
       />
-      {/*<Route*/}
-      {/*  path={AppRoute.Room}*/}
-      {/*  element={<MainScreen offers={offers} cardsCount={cardsCount} />}*/}
-      {/*/>*/}
+      <Route
+        path={AppRoute.Room}
+        element={<Offer offers={offers}/>}
+      />
       <Route path="*" element={<Page404 />} />
     </Routes>
   </BrowserRouter>
