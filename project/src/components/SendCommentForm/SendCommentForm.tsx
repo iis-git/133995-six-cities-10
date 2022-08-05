@@ -19,7 +19,27 @@ export const SendCommentForm: FC = () => {
     setFormData({...formData, [name]: value});
   };
 
-  const REVIEWS_LIST = ['terribly', 'badly', 'not bad', 'good', 'perfect'];
+  const REVIEWS_LIST = [
+    {
+      starCount: '5',
+      title: 'perfect'
+    },
+    {
+      starCount: '4',
+      title: 'good'
+    },
+    {
+      starCount: '3',
+      title: 'not bad'
+    },
+    {
+      starCount: '2',
+      title: 'badly'
+    },
+    {
+      starCount: '1',
+      title: 'terribly'
+    }];
 
 
   return (
@@ -27,12 +47,9 @@ export const SendCommentForm: FC = () => {
       <label className="reviews__label form__label" htmlFor="review">Your review</label>
       <div className="reviews__rating-form form__rating">
 
-        {REVIEWS_LIST.map((item, index) => {
-          const stars = (index + 1).toString();
-
-          return (
-            <ReviewStarInput key={item} title={item} index={stars} onChange={onReviewFormChange}/>
-          );})}
+        {REVIEWS_LIST.map((item) => (
+          <ReviewStarInput key={item.title} title={item.title} index={item.starCount} onChange={onReviewFormChange}/>
+        ))}
       </div>
       <textarea className="reviews__textarea form__textarea" id="review" name="review" placeholder="Tell how was your stay, what you like and what can be improved" onChange={onReviewFormChange}/>
       <div className="reviews__button-wrapper">
