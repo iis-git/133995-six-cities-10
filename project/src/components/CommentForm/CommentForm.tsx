@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
-import {ReviewStarInput} from './components/ReviewStarInput/ReviewStarInput';
-import {ReviewTextArea} from './components/ReviewTextArea/ReviewTextArea';
+import {StarInput} from './components/StarInput/StarInput';
+import {Textarea} from './components/Textarea/Textarea';
 
-export const SendCommentForm: FC = () => {
+export const CommentForm: FC = () => {
   const [formData, setFormData] = React.useState({
     rating: null,
     review: '',
@@ -48,10 +48,10 @@ export const SendCommentForm: FC = () => {
       <label className="reviews__label form__label" htmlFor="review">Your review</label>
       <div className="reviews__rating-form form__rating">
         {REVIEWS_LIST.map((item) => (
-          <ReviewStarInput key={item.title} title={item.title} index={item.starCount} onChange={onReviewFormChange}/>
+          <StarInput key={item.title} title={item.title} index={item.starCount} onChange={onReviewFormChange}/>
         ))}
       </div>
-      <ReviewTextArea id="review" name="review" placeholder="Tell how was your stay, what you like and what can be improved" onChange={onReviewFormChange}/>
+      <Textarea id="review" name="review" placeholder="Tell how was your stay, what you like and what can be improved" onChange={onReviewFormChange}/>
       <div className="reviews__button-wrapper">
         <p className="reviews__help">
           To submit review please make sure to set <span className="reviews__star">rating</span> and describe your stay

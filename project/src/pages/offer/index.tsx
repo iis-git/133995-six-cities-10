@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {CardProps} from '../../components/App/App';
 import {useParams} from 'react-router-dom';
 import {Page404} from '../page-404';
-import {SendCommentForm} from '../../components/SendCommentForm/SendCommentForm';
+import {CommentForm} from '../../components/CommentForm/CommentForm';
 
 type OfferProps = {
   offers: CardProps[]
@@ -196,7 +196,7 @@ export const Offer: FC<OfferProps> = ({offers}) => {
                       </div>
                     </li>
                   </ul>
-                  <SendCommentForm />
+                  <CommentForm />
                 </section>
               </div>
             </div>
