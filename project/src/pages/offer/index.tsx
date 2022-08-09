@@ -49,7 +49,7 @@ export const Offer: FC<OfferProps> = ({offers}) => {
             <div className="property__gallery-container container">
               <div className="property__gallery">
                 <div className="property__image-wrapper">
-                  <img className="property__image" src="img/room.jpg" alt="Photo studio"/>
+                  <img className="property__image" src={offer.imgSrc} alt="Photo studio"/>
                 </div>
                 <div className="property__image-wrapper">
                   <img className="property__image" src="img/apartment-01.jpg" alt="Photo studio"/>
@@ -71,11 +71,11 @@ export const Offer: FC<OfferProps> = ({offers}) => {
             <div className="property__container container">
               <div className="property__wrapper">
                 <div className="property__mark">
-                  <span>Premium</span>
+                  <span>{!!offer.isPremium && 'Premium'}</span>
                 </div>
                 <div className="property__name-wrapper">
                   <h1 className="property__name">
-                    {!!offer && offer.title}
+                    {offer.title}
                   </h1>
                   <button className="property__bookmark-button button" type="button">
                     <svg className="property__bookmark-icon" width="31" height="33">
@@ -89,11 +89,11 @@ export const Offer: FC<OfferProps> = ({offers}) => {
                     <span style={{width: '80%'}}/>
                     <span className="visually-hidden">Rating</span>
                   </div>
-                  <span className="property__rating-value rating__value">4.8</span>
+                  <span className="property__rating-value rating__value">{offer.rating}</span>
                 </div>
                 <ul className="property__features">
                   <li className="property__feature property__feature--entire">
-                    Apartment
+                    {offer.type}
                   </li>
                   <li className="property__feature property__feature--bedrooms">
                     3 Bedrooms
@@ -103,7 +103,7 @@ export const Offer: FC<OfferProps> = ({offers}) => {
                   </li>
                 </ul>
                 <div className="property__price">
-                  <b className="property__price-value">&euro;120</b>
+                  <b className="property__price-value">&euro;{offer.price}</b>
                   <span className="property__price-text">&nbsp;night</span>
                 </div>
                 <div className="property__inside">

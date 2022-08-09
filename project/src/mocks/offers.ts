@@ -1,4 +1,6 @@
-export const offers = [
+import {CardProps} from '../components/App/App';
+
+export const offers:CardProps[] = [
   {
     title: 'Beautiful & luxurious apartment at great location',
     id: '1',
