@@ -1,4 +1,6 @@
-export const Page404 = (): JSX.Element => (
+import {FC} from "react";
+
+export const Page404:FC = ()=> (
   <>
     <header className="header">
       <div className="container">

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {FC} from 'react';
 
-export const MainEmpty = (): JSX.Element => (
+export const MainEmpty:FC = () => (
   <div className="page page--gray page--main">
     <header className="header">
       <div className="container">
