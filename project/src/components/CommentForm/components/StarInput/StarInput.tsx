@@ -5,6 +5,7 @@ export type ReviewStarInputProps = {
   onChange: (evt: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   index: string;
 }
+
 export const StarInput: FC<ReviewStarInputProps> = ({title, onChange, index}) => (
   <>
     <input className="form__rating-input visually-hidden" name="rating" value={index} id={`${index}-stars`} type="radio" onChange={onChange}/>
