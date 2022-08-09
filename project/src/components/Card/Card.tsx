@@ -7,7 +7,8 @@ export type CardItemProps = {
   onMouseEnter: (id: string) => void;
 }
 export const Card: FC<CardItemProps> = ({offer, onMouseEnter}) => {
-  const link = `/offer/z:${offer.id}`;
+  const link = `/offer/:${offer.id}`;
+
   return (
     <article className="cities__card place-card" onMouseEnter={() => onMouseEnter(offer.id)}>
       <div className="place-card__mark">
@@ -15,7 +16,7 @@ export const Card: FC<CardItemProps> = ({offer, onMouseEnter}) => {
       </div>
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={link}>
-          <img className="place-card__image" src={offer.imgSrc} width="260" height="200" alt="Place image"/>
+          <img className="place-card__image" src={offer.imgSrc} width="260" height="200" alt="Place"/>
         </Link>
       </div>
       <div className="place-card__info">

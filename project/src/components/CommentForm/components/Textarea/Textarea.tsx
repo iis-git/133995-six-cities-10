@@ -8,11 +8,11 @@ export type ReviewTextAreaProps = {
 }
 
 export const Textarea: FC<ReviewTextAreaProps> = ({placeholder, name,id, onChange}) => (
-  <textarea 
+  <textarea
     className="reviews__textarea form__textarea"
-    id={id} 
-    name={name} 
-    placeholder={placeholder} 
+    id={id}
+    name={name}
+    placeholder={placeholder}
     onChange={onChange}
   />
 );

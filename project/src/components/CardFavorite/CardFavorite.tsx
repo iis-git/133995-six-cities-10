@@ -2,17 +2,17 @@ import React, {FC} from 'react';
 import {CardProps} from '../App/App';
 import {Link} from 'react-router-dom';
 
-export type CardItemProps = {
+export type CardFavoriteProps = {
   offer: CardProps,
 }
-export const CardFavorite: FC<CardItemProps> = ({offer}) => {
+export const CardFavorite: FC<CardFavoriteProps> = ({offer}) => {
   const link = `/offer/${offer.id}`;
-  
+
   return (
     <article className="favorites__card place-card">
       <div className="favorites__image-wrapper place-card__image-wrapper">
         <Link to={link}>
-          <img className="place-card__image" src={offer.imgSrc} width="150" height="110" alt="Place image"/>
+          <img className="place-card__image" src={offer.imgSrc} width="150" height="110" alt="Place"/>
         </Link>
       </div>
       <div className="favorites__card-info place-card__info">

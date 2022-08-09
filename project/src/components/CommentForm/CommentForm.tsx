@@ -2,6 +2,28 @@ import React, {FC} from 'react';
 import {StarInput} from './components/StarInput/StarInput';
 import {Textarea} from './components/Textarea/Textarea';
 
+const REVIEWS_LIST = [
+  {
+    starCount: '5',
+    title: 'perfect'
+  },
+  {
+    starCount: '4',
+    title: 'good'
+  },
+  {
+    starCount: '3',
+    title: 'not bad'
+  },
+  {
+    starCount: '2',
+    title: 'badly'
+  },
+  {
+    starCount: '1',
+    title: 'terribly'
+  }];
+
 export const CommentForm: FC = () => {
   const [formData, setFormData] = React.useState({
     rating: null,
@@ -20,29 +42,6 @@ export const CommentForm: FC = () => {
     setFormData({...formData, [name]: value});
   };
 
-  const REVIEWS_LIST = [
-    {
-      starCount: '5',
-      title: 'perfect'
-    },
-    {
-      starCount: '4',
-      title: 'good'
-    },
-    {
-      starCount: '3',
-      title: 'not bad'
-    },
-    {
-      starCount: '2',
-      title: 'badly'
-    },
-    {
-      starCount: '1',
-      title: 'terribly'
-    }];
-
-
   return (
     <form className="reviews__form form" action="#" method="post">
       <label className="reviews__label form__label" htmlFor="review">Your review</label>
@@ -57,7 +56,7 @@ export const CommentForm: FC = () => {
           To submit review please make sure to set <span className="reviews__star">rating</span> and describe your stay
           with at least <b className="reviews__text-amount">50 characters</b>.
         </p>
-        <button className="reviews__submit form__submit button" type="button" onClick={updateFormState}>Submit</button>
+        <button className="reviews__submit form__submit button" type="button" onSubmit={updateFormState}>Submit</button>
       </div>
     </form>
   );

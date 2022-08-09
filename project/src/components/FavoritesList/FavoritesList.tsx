@@ -5,9 +5,9 @@ import {CardFavorite} from '../CardFavorite/CardFavorite';
 export type OffersListProps = {
   offers: CardProps[]
 }
-export const FavoritesList: FC<OffersListProps> = ({content}) => (
+export const FavoritesList: FC<OffersListProps> = ({offers}) => (
   <div className="cities__places-list places__list tabs__content">
-    {content.map((offer, index) => <CardFavorite key={offer.id} offer={offer}/>)}
+    {offers.map((offer) => <CardFavorite key={offer.id} offer={offer}/>)}
   </div>
 );
 
