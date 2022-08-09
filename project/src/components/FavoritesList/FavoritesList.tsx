@@ -3,7 +3,7 @@ import {CardProps} from '../App/App';
 import {CardFavorite} from '../CardFavorite/CardFavorite';
 
 export type OffersListProps = {
-  content: CardProps[]
+  offers: CardProps[]
 }
 export const FavoritesList: FC<OffersListProps> = ({content}) => (
   <div className="cities__places-list places__list tabs__content">
