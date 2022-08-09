@@ -7,6 +7,7 @@ export type CardItemProps = {
 }
 export const CardFavorite: FC<CardItemProps> = ({offer}) => {
   const link = `/offer/${offer.id}`;
+  
   return (
     <article className="favorites__card place-card">
       <div className="favorites__image-wrapper place-card__image-wrapper">
