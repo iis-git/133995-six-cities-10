@@ -11,23 +11,18 @@ type MapProps = {
   selectedPoint?: TPoint | undefined;
 };
 
-const defaultCustomIcon = new Icon({
-  iconUrl: URL_MARKER_DEFAULT,
-  iconSize: [40, 40],
-  iconAnchor: [20, 40]
-});
-
-const currentCustomIcon = new Icon({
-  iconUrl: URL_MARKER_CURRENT,
-  iconSize: [40, 40],
-  iconAnchor: [20, 40]
-});
-
-export const Map = (props: MapProps ): JSX.Element => {
+export const Map = (props: MapProps): JSX.Element => {
   const {city, points, selectedPoint} = props;
 
   const mapRef = useRef(null);
   const map = useMap(mapRef, city);
+
+  const checkIsIconActive = (activePoint: TPoint | undefined, point: TPoint) => new Icon({
+    iconUrl: selectedPoint !== undefined && point.title === selectedPoint.title ? URL_MARKER_CURRENT : URL_MARKER_DEFAULT,
+    iconSize: [40, 40],
+    iconAnchor: [20, 40]
+  });
+
   useEffect(() => {
     if (map) {
       points.forEach((point) => {
@@ -37,11 +32,7 @@ export const Map = (props: MapProps ): JSX.Element => {
         });
 
         marker
-          .setIcon(
-            selectedPoint !== undefined && point.title === selectedPoint.title
-              ? currentCustomIcon
-              : defaultCustomIcon
-          )
+          .setIcon(checkIsIconActive(selectedPoint, point))
           .addTo(map);
       });
     }
