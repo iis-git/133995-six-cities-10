@@ -7,7 +7,7 @@ export type CardItemProps = {
   onMouseEnter: (id: string) => void;
 }
 export const Card: FC<CardItemProps> = ({offer, onMouseEnter}) => {
-  const link = `/offer/:${offer.id}`;
+  const link = `/offer/${offer.id}`;
 
   return (
     <article className="cities__card place-card" onMouseEnter={() => onMouseEnter(offer.id)}>

@@ -2,6 +2,9 @@ import {CardProps} from '../../components/App/App';
 import {OffersList} from '../../components/OffersList/OffersList';
 import {FC} from 'react';
 import {Link} from 'react-router-dom';
+import {Map} from '../../components/Map/Map';
+import {POINTS} from '../../mocks/points';
+import {CITY} from '../../mocks/city';
 
 type MainScreenProps = {
   cardsCount: number,
@@ -81,7 +84,7 @@ export const MainScreen:FC<MainScreenProps> = ({cardsCount, offers}) => (
         <div className="cities__places-container container">
           <section className="cities__places places">
             <h2 className="visually-hidden">Places</h2>
-            <b className="places__found">312 places to stay in Amsterdam</b>
+            <b className="places__found">312 places to stay in {CITY.title}</b>
             <form className="places__sorting" action="#" method="get">
               <span className="places__sorting-caption">Sort by</span>
               <span className="places__sorting-type" tabIndex={0}>
@@ -100,7 +103,9 @@ export const MainScreen:FC<MainScreenProps> = ({cardsCount, offers}) => (
             <OffersList content={offers} cardsCount={cardsCount}/>
           </section>
           <div className="cities__right-section">
-            <section className="cities__map map"/>
+            <section className="cities__map map">
+              <Map city={CITY} points={POINTS}/>
+            </section>
           </div>
         </div>
       </div>
