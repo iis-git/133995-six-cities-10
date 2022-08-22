@@ -1,12 +1,14 @@
-import React, {FC, useState} from 'react';
+import React, {useState} from 'react';
 import {Card} from '../Card/Card';
-import {CardProps} from '../App/App';
+import {TCardProps} from '../../types/types';
 
-export type OffersListProps = {
-  content: CardProps[],
+type OffersListProps = {
+  content: TCardProps[],
   cardsCount?: number;
-}
-export const OffersList:FC<OffersListProps> = ({content, cardsCount = 0}) => {
+};
+
+export const OffersList = (props: OffersListProps): JSX.Element => {
+  const {content, cardsCount = 0} = props;
   const [activeCard, setActiveCard] = useState<string>('1');
 
   return (

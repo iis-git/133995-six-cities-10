@@ -5,45 +5,38 @@ import { Login } from '../../pages/login';
 import { Favorites } from '../../pages/favorites';
 import { Page404 } from '../../pages/page-404';
 import { PrivateRoute } from '../PrivateRoute/PrivateRoute';
-import { FC } from 'react';
 import {Offer} from '../../pages/offer';
-
-export type CardProps = {
-  title: string,
-  id: string,
-  price: number,
-  type: string,
-  imgSrc: string,
-  rating: number,
-  isPremium?: boolean,
-}
+import {TCardProps} from '../../types/types';
 
 type AppProps = {
   cardsCount: number,
-  offers: CardProps[];
+  offers: TCardProps[];
 };
 
-export const App:FC<AppProps> = ({ cardsCount, offers }) => (
-  <BrowserRouter>
-    <Routes>
-      <Route
-        path={AppRoute.Root}
-        element={<MainScreen cardsCount={cardsCount} offers={offers} />}
-      />
-      <Route path={AppRoute.Login} element={<Login />} />
-      <Route
-        path={AppRoute.Favorites}
-        element={
-          <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
-            <Favorites offers={offers} />
-          </PrivateRoute>
-        }
-      />
-      <Route
-        path={AppRoute.Room}
-        element={<Offer offers={offers}/>}
-      />
-      <Route path="*" element={<Page404 />} />
-    </Routes>
-  </BrowserRouter>
-);
+export const App = (props: AppProps ): JSX.Element => {
+  const {cardsCount, offers} = props;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path={AppRoute.Root}
+          element={<MainScreen cardsCount={cardsCount} offers={offers}/>}
+        />
+        <Route path={AppRoute.Login} element={<Login/>}/>
+        <Route
+          path={AppRoute.Favorites}
+          element={
+            <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
+              <Favorites offers={offers}/>
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path={AppRoute.Room}
+          element={<Offer offers={offers}/>}
+        />
+        <Route path="*" element={<Page404/>}/>
+      </Routes>
+    </BrowserRouter>
+  );
+};
