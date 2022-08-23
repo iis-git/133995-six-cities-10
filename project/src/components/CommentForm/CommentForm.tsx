@@ -1,9 +1,9 @@
-import React, {FC} from 'react';
+import React from 'react';
 import {StarInput} from './components/StarInput/StarInput';
 import {Textarea} from './components/Textarea/Textarea';
 import {REVIEWS_STARS} from '../../const';
 
-export const CommentForm: FC = () => {
+export const CommentForm = (): JSX.Element => {
   const [formData, setFormData] = React.useState({
     rating: null,
     review: '',

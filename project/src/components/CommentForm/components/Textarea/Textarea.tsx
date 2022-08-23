@@ -1,19 +1,23 @@
-import React, {FC} from 'react';
+import React from 'react';
 
-export type ReviewTextAreaProps = {
+type ReviewTextAreaProps = {
   onChange: (evt: React.ChangeEvent<HTMLTextAreaElement>) => void;
   placeholder?: string;
   name: string;
   id: string;
-}
+};
 
-export const Textarea: FC<ReviewTextAreaProps> = ({placeholder, name,id, onChange}) => (
-  <textarea
-    className="reviews__textarea form__textarea"
-    id={id}
-    name={name}
-    placeholder={placeholder}
-    onChange={onChange}
-  />
-);
+export const Textarea = (props: ReviewTextAreaProps): JSX.Element => {
+  const {placeholder, name, id, onChange} = props;
+
+  return (
+    <textarea
+      className="reviews__textarea form__textarea"
+      id={id}
+      name={name}
+      placeholder={placeholder}
+      onChange={onChange}
+    />
+  );
+};
 

@@ -1,12 +1,14 @@
-import React, {FC} from 'react';
-import {CardProps} from '../App/App';
+import React from 'react';
 import {Link} from 'react-router-dom';
+import {TCardProps} from '../../types/types';
 
 export type CardItemProps = {
-  offer: CardProps,
+  offer: TCardProps,
   onMouseEnter: (id: string) => void;
-}
-export const Card: FC<CardItemProps> = ({offer, onMouseEnter}) => {
+};
+
+export const Card = (props:CardItemProps): JSX.Element => {
+  const {offer, onMouseEnter} = props;
   const link = `/offer/${offer.id}`;
 
   return (

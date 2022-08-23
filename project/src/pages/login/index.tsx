@@ -1,7 +1,7 @@
-import React, {FC} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 
-export const Login:FC = () => (
+export const Login = (): JSX.Element => (
   <div className="page page--gray page--login">
     <header className="header">
       <div className="container">

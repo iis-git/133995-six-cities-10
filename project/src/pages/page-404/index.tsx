@@ -1,7 +1,6 @@
-import {FC} from 'react';
 import {Link} from 'react-router-dom';
 
-export const Page404:FC = ()=> (
+export const Page404 = (): JSX.Element => (
   <>
     <header className="header">
       <div className="container">

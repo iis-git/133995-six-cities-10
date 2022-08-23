@@ -1,11 +1,13 @@
-import React, {FC} from 'react';
-import {CardProps} from '../App/App';
+import React from 'react';
 import {Link} from 'react-router-dom';
+import {TCardProps} from '../../types/types';
 
-export type CardFavoriteProps = {
-  offer: CardProps,
-}
-export const CardFavorite: FC<CardFavoriteProps> = ({offer}) => {
+type CardFavoriteProps = {
+  offer: TCardProps,
+};
+
+export const CardFavorite = (props:CardFavoriteProps): JSX.Element => {
+  const {offer} = props;
   const link = `/offer/${offer.id}`;
 
   return (

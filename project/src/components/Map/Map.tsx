@@ -1,33 +1,28 @@
-import {useRef, useEffect, FC} from 'react';
+import {useRef, useEffect} from 'react';
 import {Icon, Marker} from 'leaflet';
 import {useMap} from '../../hooks/useMap';
-import {City, Points, Point} from '../../types/types';
+import {TCity, TPoint} from '../../types/types';
 import {URL_MARKER_DEFAULT, URL_MARKER_CURRENT} from '../../const';
 import 'leaflet/dist/leaflet.css';
 
 type MapProps = {
-  city: City;
-  points: Points;
-  selectedPoint?: Point | undefined;
+  city: TCity;
+  points: TPoint[];
+  selectedPoint?: TPoint | undefined;
 };
 
-const defaultCustomIcon = new Icon({
-  iconUrl: URL_MARKER_DEFAULT,
-  iconSize: [40, 40],
-  iconAnchor: [20, 40]
-});
-
-const currentCustomIcon = new Icon({
-  iconUrl: URL_MARKER_CURRENT,
-  iconSize: [40, 40],
-  iconAnchor: [20, 40]
-});
-
-export const Map:FC<MapProps> = (props ) => {
+export const Map = (props: MapProps): JSX.Element => {
   const {city, points, selectedPoint} = props;
 
   const mapRef = useRef(null);
   const map = useMap(mapRef, city);
+
+  const checkIsIconActive = (activePoint: TPoint | undefined, point: TPoint) => new Icon({
+    iconUrl: selectedPoint !== undefined && point.title === selectedPoint.title ? URL_MARKER_CURRENT : URL_MARKER_DEFAULT,
+    iconSize: [40, 40],
+    iconAnchor: [20, 40]
+  });
+
   useEffect(() => {
     if (map) {
       points.forEach((point) => {
@@ -37,11 +32,7 @@ export const Map:FC<MapProps> = (props ) => {
         });
 
         marker
-          .setIcon(
-            selectedPoint !== undefined && point.title === selectedPoint.title
-              ? currentCustomIcon
-              : defaultCustomIcon
-          )
+          .setIcon(checkIsIconActive(selectedPoint, point))
           .addTo(map);
       });
     }
