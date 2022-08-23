@@ -8,6 +8,7 @@ type ReviewStarInputProps = {
 
 export const StarInput = (props:ReviewStarInputProps): JSX.Element => {
   const {title, onChange, index} = props;
+
   return (
     <>
       <input className="form__rating-input visually-hidden" name="rating" value={index} id={`${index}-stars`} type="radio" onChange={onChange}/>

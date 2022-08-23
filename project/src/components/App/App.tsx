@@ -15,6 +15,7 @@ type AppProps = {
 
 export const App = (props: AppProps ): JSX.Element => {
   const {cardsCount, offers} = props;
+
   return (
     <BrowserRouter>
       <Routes>

@@ -9,7 +9,7 @@ export const REVIEWS:TReviewsItem[] = [
   },
   {
     stars: 2,
-    comment: ' The building is green and from 18th century.',
+    comment: 'The building is green and from 18th century.',
     author: 'John',
     avatar: 'string',
   },

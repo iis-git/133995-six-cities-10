@@ -9,6 +9,7 @@ type ReviewsListProps = {
 
 export const ReviewsList = (props:ReviewsListProps): JSX.Element => {
   const {reviews} = props;
+
   return (
     <>
       <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">{reviews.length}</span></h2>
