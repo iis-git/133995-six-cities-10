@@ -2,7 +2,7 @@ import {CardProps, City} from './types';
 import {store} from '../store';
 
 export type InitialState = {
-  city: City;
+  activeCity: City;
   offers: CardProps[] | [];
 };
 
