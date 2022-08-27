@@ -11,7 +11,7 @@ export type Point = {
   lng: number;
 };
 
-export type ReviewsItem = {
+export type ReviewItem = {
   stars: number,
   comment: string,
   author: string,

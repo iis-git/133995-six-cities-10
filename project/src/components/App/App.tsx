@@ -6,22 +6,27 @@ import { Favorites } from '../../pages/favorites';
 import { Page404 } from '../../pages/page-404';
 import { PrivateRoute } from '../PrivateRoute/PrivateRoute';
 import {Offer} from '../../pages/offer';
-import {CardProps} from '../../types/types';
+import { useAppDispatch } from '../../hooks';
+import { setOffers } from '../../store/action';
+import { offers } from '../../mocks/offers';
 
 type AppProps = {
-  cardsCount: number,
-  offers: CardProps[];
+  cardsCount: number;
 };
 
 export const App = (props: AppProps ): JSX.Element => {
-  const {cardsCount, offers} = props;
+  const {cardsCount} = props;
+
+  const dispatch = useAppDispatch();
+
+  dispatch(setOffers(offers));
 
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path={AppRoute.Root}
-          element={<MainScreen cardsCount={cardsCount} offers={offers}/>}
+          element={<MainScreen cardsCount={cardsCount}/>}
         />
         <Route path={AppRoute.Login} element={<Login/>}/>
         <Route

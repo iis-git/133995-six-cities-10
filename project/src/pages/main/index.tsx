@@ -2,16 +2,16 @@ import {OffersList} from '../../components/OffersList/OffersList';
 import {Link} from 'react-router-dom';
 import {Map} from '../../components/Map/Map';
 import {POINTS} from '../../mocks/points';
-import {CITY} from '../../mocks/city';
-import {CardProps} from '../../types/types';
+import {CITIES_LIST, CITY} from '../../const';
+import {offers} from '../../mocks/offers';
+import {CitiesList} from '../../components/CitiesList/CitiesList';
 
 type MainScreenProps = {
-  cardsCount: number,
-  offers: CardProps[]
+  cardsCount: number;
 };
 
-export const MainScreen = (props:MainScreenProps): JSX.Element => {
-  const {cardsCount, offers} = props;
+export const MainScreen = (props: MainScreenProps): JSX.Element => {
+  const {cardsCount} = props;
 
   return (
     <div className="page page--gray page--main">
@@ -48,38 +48,7 @@ export const MainScreen = (props:MainScreenProps): JSX.Element => {
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">
           <section className="locations container">
-            <ul className="locations__list tabs__list">
-              <li className="locations__item">
-                <Link className="locations__item-link tabs__item" to="/">
-                  <span>Paris</span>
-                </Link>
-              </li>
-              <li className="locations__item">
-                <Link className="locations__item-link tabs__item" to="/">
-                  <span>Cologne</span>
-                </Link>
-              </li>
-              <li className="locations__item">
-                <Link className="locations__item-link tabs__item" to="/">
-                  <span>Brussels</span>
-                </Link>
-              </li>
-              <li className="locations__item">
-                <Link to="/" className="locations__item-link tabs__item tabs__item--active">
-                  <span>Amsterdam</span>
-                </Link>
-              </li>
-              <li className="locations__item">
-                <Link className="locations__item-link tabs__item" to="/">
-                  <span>Hamburg</span>
-                </Link>
-              </li>
-              <li className="locations__item">
-                <Link className="locations__item-link tabs__item" to="/">
-                  <span>Dusseldorf</span>
-                </Link>
-              </li>
-            </ul>
+            <CitiesList cities={CITIES_LIST}/>
           </section>
         </div>
         <div className="cities">

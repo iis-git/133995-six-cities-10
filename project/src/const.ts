@@ -37,3 +37,48 @@ export const URL_MARKER_DEFAULT = 'https://assets.htmlacademy.ru/content/intensi
 
 export const URL_MARKER_CURRENT = 'https://assets.htmlacademy.ru/content/intensive/javascript-1/demo/interactive-map/main-pin.svg';
 
+export const CITY = {
+  title: 'Paris',
+  lat:  52.374,
+  lng: 4.88969,
+  zoom: 10,
+};
+
+export const CITIES_LIST = [
+  {
+    title: 'Amsterdam',
+    lat:  52.374,
+    lng: 4.88969,
+    zoom: 10,
+  },
+  {
+    title: 'Paris',
+    lat:  52.374,
+    lng: 4.88969,
+    zoom: 10,
+  },
+  {
+    title: 'Cologne',
+    lat:  52.374,
+    lng: 4.88969,
+    zoom: 10,
+  },
+  {
+    title: 'Brussels',
+    lat:  52.374,
+    lng: 4.88969,
+    zoom: 10,
+  },
+  {
+    title: 'Hamburg',
+    lat:  52.374,
+    lng: 4.88969,
+    zoom: 10,
+  },
+  {
+    title: 'Dusseldorf',
+    lat:  52.374,
+    lng: 4.88969,
+    zoom: 10,
+  }
+];

@@ -11,17 +11,17 @@ type MapProps = {
   selectedPoint?: Point | undefined;
 };
 
+const checkActiveIcon = (activePoint: Point | undefined, point: Point) => new Icon({
+  iconUrl: activePoint !== undefined && point.title === activePoint.title ? URL_MARKER_CURRENT : URL_MARKER_DEFAULT,
+  iconSize: [40, 40],
+  iconAnchor: [20, 40]
+});
+
 export const Map = (props: MapProps): JSX.Element => {
   const {city, points, selectedPoint} = props;
 
   const mapRef = useRef(null);
   const map = useMap(mapRef, city);
-
-  const checkIsIconActive = (activePoint: Point | undefined, point: Point) => new Icon({
-    iconUrl: selectedPoint !== undefined && point.title === selectedPoint.title ? URL_MARKER_CURRENT : URL_MARKER_DEFAULT,
-    iconSize: [40, 40],
-    iconAnchor: [20, 40]
-  });
 
   useEffect(() => {
     if (map) {
@@ -32,7 +32,7 @@ export const Map = (props: MapProps): JSX.Element => {
         });
 
         marker
-          .setIcon(checkIsIconActive(selectedPoint, point))
+          .setIcon(checkActiveIcon(selectedPoint, point))
           .addTo(map);
       });
     }

@@ -1,6 +1,6 @@
-import {ReviewsItem} from '../types/types';
+import {ReviewItem} from '../types/types';
 
-export const REVIEWS:ReviewsItem[] = [
+export const REVIEWS: ReviewItem[] = [
   {
     stars: 4,
     comment: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
@@ -14,4 +14,3 @@ export const REVIEWS:ReviewsItem[] = [
     avatar: 'string',
   },
 ];
-

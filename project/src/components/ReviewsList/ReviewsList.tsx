@@ -1,10 +1,10 @@
 import React from 'react';
 import {CommentForm} from '../CommentForm/CommentForm';
 import {ReviewsItem} from './components/ReviewsItem/ReviewsItem';
-import {ReviewsItem} from '../../types/types';
+import {ReviewItem} from '../../types/types';
 
 type ReviewsListProps = {
-  reviews: ReviewsItem[];
+  reviews: ReviewItem[];
 };
 
 export const ReviewsList = (props:ReviewsListProps): JSX.Element => {

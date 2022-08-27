@@ -5,9 +5,9 @@ import {ReviewsList} from '../../components/ReviewsList/ReviewsList';
 import {REVIEWS} from '../../mocks/reviews';
 import {CardProps} from '../../types/types';
 import {Map} from '../../components/Map/Map';
-import {CITY} from '../../mocks/city';
 import {POINTS} from '../../mocks/points';
 import {OffersList} from '../../components/OffersList/OffersList';
+import {CITY} from '../../const';
 
 type OfferProps = {
   offers: CardProps[]

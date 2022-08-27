@@ -1,8 +1,8 @@
 import React from 'react';
-import {ReviewsItem} from '../../../../types/types';
+import {ReviewItem} from '../../../../types/types';
 
 type ReviewsItemProps = {
-  review: ReviewsItem;
+  review: ReviewItem;
 };
 
 export const ReviewsItem = (props: ReviewsItemProps): JSX.Element => {
