@@ -1,6 +1,6 @@
-import {TReviewsItem} from '../types/types';
+import {ReviewsItem} from '../types/types';
 
-export const REVIEWS:TReviewsItem[] = [
+export const REVIEWS:ReviewsItem[] = [
   {
     stars: 4,
     comment: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',

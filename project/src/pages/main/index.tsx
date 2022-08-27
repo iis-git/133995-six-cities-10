@@ -3,11 +3,11 @@ import {Link} from 'react-router-dom';
 import {Map} from '../../components/Map/Map';
 import {POINTS} from '../../mocks/points';
 import {CITY} from '../../mocks/city';
-import {TCardProps} from '../../types/types';
+import {CardProps} from '../../types/types';
 
 type MainScreenProps = {
   cardsCount: number,
-  offers: TCardProps[]
+  offers: CardProps[]
 };
 
 export const MainScreen = (props:MainScreenProps): JSX.Element => {

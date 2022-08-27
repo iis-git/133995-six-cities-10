@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {TCardProps} from '../../types/types';
+import {CardProps} from '../../types/types';
 
 export type CardItemProps = {
-  offer: TCardProps,
+  offer: CardProps,
   onMouseEnter: (id: string) => void;
 };
 

@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {Card} from '../Card/Card';
-import {TCardProps} from '../../types/types';
+import {CardProps} from '../../types/types';
 
 type OffersListProps = {
-  content: TCardProps[],
+  content: CardProps[],
   cardsCount?: number;
 };
 

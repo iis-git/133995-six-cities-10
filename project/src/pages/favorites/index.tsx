@@ -2,10 +2,10 @@ import React from 'react';
 import {OffersList} from '../../components/OffersList/OffersList';
 import {FavoritesList} from '../../components/FavoritesList/FavoritesList';
 import {Link} from 'react-router-dom';
-import {TCardProps} from '../../types/types';
+import {CardProps} from '../../types/types';
 
 type FavoritesProps = {
-  offers: TCardProps[]
+  offers: CardProps[]
 };
 
 export const Favorites = (props:FavoritesProps) => {

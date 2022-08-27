@@ -1,24 +1,24 @@
-export type TCity = {
+export type City = {
   title: string;
   lat: number;
   lng: number;
   zoom: number;
 };
 
-export type TPoint = {
+export type Point = {
   title: string;
   lat: number;
   lng: number;
 };
 
-export type TReviewsItem = {
+export type ReviewsItem = {
   stars: number,
   comment: string,
   author: string,
   avatar: string,
 };
 
-export type TCardProps = {
+export type CardProps = {
   title: string,
   id: string,
   price: number,

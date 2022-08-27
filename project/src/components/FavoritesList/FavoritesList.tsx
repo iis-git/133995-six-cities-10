@@ -1,9 +1,9 @@
 import React from 'react';
 import {CardFavorite} from '../CardFavorite/CardFavorite';
-import {TCardProps} from '../../types/types';
+import {CardProps} from '../../types/types';
 
 type OffersListProps = {
-  offers: TCardProps[]
+  offers: CardProps[]
 };
 
 export const FavoritesList = (props: OffersListProps): JSX.Element => {

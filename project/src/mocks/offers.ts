@@ -1,6 +1,6 @@
-import {TCardProps} from '../types/types';
+import {CardProps} from '../types/types';
 
-export const offers:TCardProps[] = [
+export const offers:CardProps[] = [
   {
     title: 'Beautiful & luxurious apartment at great location',
     id: '1',

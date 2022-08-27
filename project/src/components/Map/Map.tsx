@@ -1,14 +1,14 @@
 import {useRef, useEffect} from 'react';
 import {Icon, Marker} from 'leaflet';
 import {useMap} from '../../hooks/useMap';
-import {TCity, TPoint} from '../../types/types';
+import {City, Point} from '../../types/types';
 import {URL_MARKER_DEFAULT, URL_MARKER_CURRENT} from '../../const';
 import 'leaflet/dist/leaflet.css';
 
 type MapProps = {
-  city: TCity;
-  points: TPoint[];
-  selectedPoint?: TPoint | undefined;
+  city: City;
+  points: Point[];
+  selectedPoint?: Point | undefined;
 };
 
 export const Map = (props: MapProps): JSX.Element => {
@@ -17,7 +17,7 @@ export const Map = (props: MapProps): JSX.Element => {
   const mapRef = useRef(null);
   const map = useMap(mapRef, city);
 
-  const checkIsIconActive = (activePoint: TPoint | undefined, point: TPoint) => new Icon({
+  const checkIsIconActive = (activePoint: Point | undefined, point: Point) => new Icon({
     iconUrl: selectedPoint !== undefined && point.title === selectedPoint.title ? URL_MARKER_CURRENT : URL_MARKER_DEFAULT,
     iconSize: [40, 40],
     iconAnchor: [20, 40]

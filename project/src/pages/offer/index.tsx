@@ -3,14 +3,14 @@ import {Link, useParams} from 'react-router-dom';
 import {Page404} from '../page-404';
 import {ReviewsList} from '../../components/ReviewsList/ReviewsList';
 import {REVIEWS} from '../../mocks/reviews';
-import {TCardProps} from '../../types/types';
+import {CardProps} from '../../types/types';
 import {Map} from '../../components/Map/Map';
 import {CITY} from '../../mocks/city';
 import {POINTS} from '../../mocks/points';
 import {OffersList} from '../../components/OffersList/OffersList';
 
 type OfferProps = {
-  offers: TCardProps[]
+  offers: CardProps[]
 };
 
 const NEAR_PROPERTIES_COUNT = 3;

@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {TCardProps} from '../../types/types';
+import {CardProps} from '../../types/types';
 
 type CardFavoriteProps = {
-  offer: TCardProps,
+  offer: CardProps,
 };
 
 export const CardFavorite = (props:CardFavoriteProps): JSX.Element => {

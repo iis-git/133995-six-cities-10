@@ -6,11 +6,11 @@ import { Favorites } from '../../pages/favorites';
 import { Page404 } from '../../pages/page-404';
 import { PrivateRoute } from '../PrivateRoute/PrivateRoute';
 import {Offer} from '../../pages/offer';
-import {TCardProps} from '../../types/types';
+import {CardProps} from '../../types/types';
 
 type AppProps = {
   cardsCount: number,
-  offers: TCardProps[];
+  offers: CardProps[];
 };
 
 export const App = (props: AppProps ): JSX.Element => {
