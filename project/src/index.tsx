@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(
 );
 
 const AppData = {
-  CARDS_COUNT: 3
+  CARDS_COUNT: 4
 };
 
 root.render(
